@@ -1,0 +1,6 @@
+# 配置项目路径、端口
+server:
+  servlet:
+    context-path: /exm
+
+  port: 8081

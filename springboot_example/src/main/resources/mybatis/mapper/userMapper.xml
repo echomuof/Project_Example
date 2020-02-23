@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.okay3r.springboot_example.dao.UserMapper">
+
+    <resultMap id="BaseResultMap" type="top.okay3r.springboot_example.entity.User">
+        <id column="id" property="username" jdbcType="BIGINT"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="birthday" property="birthday" jdbcType="DATE" javaType="java.util.Date"/>
+        <result column="sex" property="sex" javaType="top.okay3r.springboot_example.enums.UserSexEnum"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, username, birthday, sex, address
+    </sql>
+
+    <select id="getAll" resultType="top.okay3r.springboot_example.entity.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+    </select>
+
+    <select id="getOne" parameterType="Long" resultType="top.okay3r.springboot_example.entity.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where id=#{id}
+    </select>
+
+    <insert id="insert" parameterType="top.okay3r.springboot_example.entity.User">
+        insert into
+        user
+        (username,birthday,sex,address)
+        values
+        (#{username}, #{birthday}, #{sex}, #{address});
+    </insert>
+
+    <update id="update" parameterType="top.okay3r.springboot_example.entity.User">
+        update user
+        set
+        <if test="username!=null">username=#{username}</if>
+        <if test="address!=null">address=#{address}</if>
+        where
+        id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="Long">
+        delete from
+        user
+        where
+        id=#{id}
+    </delete>
+
+
+</mapper>

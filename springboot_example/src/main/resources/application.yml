@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    include: mybatis,redis,web
+
+# 设计日志级别
+logging:
+  level:
+    # 此处是为了mybatis log plugin
+    top.okay3r.springboot_example.dao: debug
+
+
+
