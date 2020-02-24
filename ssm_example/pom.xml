@@ -15,8 +15,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 
 
         <spring.version>5.0.7.RELEASE</spring.version>
@@ -85,7 +85,10 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>1.3.1</version>
-        </dependency> <!-- 持久层依赖 结束 --> <!-- 业务层依赖 开始 --> <!-- 基于AspectJ的aop依赖 -->
+        </dependency>
+        <!-- 持久层依赖 结束 -->
+        <!-- 业务层依赖 开始 -->
+        <!-- 基于AspectJ的aop依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
@@ -96,6 +99,19 @@
             <artifactId>aopalliance</artifactId>
             <version>1.0</version>
         </dependency>
+        <!--  jedis  -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.7.3</version>
+        </dependency>
+        <!--  spring-data-redis  -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.6.1.RELEASE</version>
+        </dependency>
+
         <!-- 业务层依赖 结束 -->
 
         <!-- 表现层依赖 开始 -->
@@ -171,6 +187,13 @@
             <version>1.7.5</version>
         </dependency>
 
+        <!--fastjson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -215,8 +238,13 @@
                 <version>2.2</version>
                 <configuration>
                     <uriEncoding>utf8</uriEncoding>
-                    <port>80</port>
-                    <path>/</path>
+                    <port>8080</port>
+                    <path>/ssm</path>
+                    <url>http://127.0.0.1:8080/manager/text</url>
+                    <server>tomcat9</server>
+                    <username>admin</username>
+                    <password>admin</password>
+                    <update>true</update>
                 </configuration>
             </plugin>
         </plugins>

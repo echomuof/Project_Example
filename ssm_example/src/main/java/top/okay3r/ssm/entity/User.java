@@ -4,9 +4,11 @@ package top.okay3r.ssm.entity;
 
 import top.okay3r.ssm.enums.UserSexEnum;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = -5177973407082925318L;
     private Long id;
     private String username;
     private Date birthday;
