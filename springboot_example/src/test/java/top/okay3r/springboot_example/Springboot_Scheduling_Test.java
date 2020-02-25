@@ -15,6 +15,6 @@ public class Springboot_Scheduling_Test {
 
     @Test
     public void testScheduling() {
-        this.helloService.dataCount();
+        // this.helloService.dataCount();
     }
 }

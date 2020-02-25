@@ -15,7 +15,7 @@ public class HelloController {
 
     @GetMapping("/say1")
     public String sayHello(@RequestParam("username") String name) {
-        logger.info("say1 execute..." + name);
+        logger.info("say哈哈123 execute..." + name);
         return "Hello," + name;
     }
 
@@ -28,12 +28,14 @@ public class HelloController {
     @Autowired
     private HelloService helloService;
 
+    //测试异步任务
     @GetMapping("/task")
     public String syncTask() {
         this.helloService.doAsyncTask();
         return "job done";
     }
 
+    //测试定时任务
     @GetMapping("/time")
     public String doTimeTask() {
         this.helloService.doAsyncTask();

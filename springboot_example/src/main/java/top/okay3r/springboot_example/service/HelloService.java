@@ -20,9 +20,9 @@ public class HelloService {
 
     private static int count = 0;
 
-    //定时任务
+    /*//定时任务
     @Scheduled(cron = "0/3 * * * * ? ")
     public void dataCount() {
-        System.out.println("记录一下：" + count++);
-    }
+        System.out.println("记录啊一下：" + count++);
+    }*/
 }

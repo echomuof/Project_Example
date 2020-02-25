@@ -1,6 +1,6 @@
 spring:
   profiles:
-    include: mybatis,redis,web
+    include: mybatis,redis,web,mq
 
 # 设计日志级别
 logging:

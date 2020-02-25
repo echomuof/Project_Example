@@ -3,9 +3,11 @@ package top.okay3r.springboot_example.entity;
 
 import top.okay3r.springboot_example.enums.UserSexEnum;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = -7208103384766268279L;
     private Long id;
     private String username;
     private Date birthday;
