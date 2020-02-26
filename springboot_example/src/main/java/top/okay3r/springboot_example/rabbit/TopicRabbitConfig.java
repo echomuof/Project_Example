@@ -27,6 +27,7 @@ public class TopicRabbitConfig {
 
     @Bean
     public TopicExchange exchange() {
+
         return new TopicExchange("myExchange");
     }
 
