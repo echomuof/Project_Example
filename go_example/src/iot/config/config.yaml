@@ -1,0 +1,16 @@
+emqx:
+  address: tcp://47.93.10.179:1883
+  username: admin
+  password: admin
+  clientId: ok-test1
+
+clientInfo:
+  topicList: test/#
+  qosList: 0
+
+rabbitmq:
+  address: 127.0.0.1:5672
+  username: guest
+  password: guest
+  virtual-host: /
+  basicTopic: iotTest
