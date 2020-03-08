@@ -18,6 +18,8 @@
     <!-- 内置了RequestMappingHandlerMapping和RequestMappingHandlerAdapter等组件注册-->
     <mvc:annotation-driven/>
 
+
+    <mvc:default-servlet-handler/>
     <!-- 配置三大组件之视图解析器 -->
     <!-- InternalResourceViewResolver:默认支持JSP视图解析-->
     <!-- 完整路径：   /WEB-INF/jsp/xxx.jsp -->
