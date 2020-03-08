@@ -9,6 +9,6 @@ public class Main {
         applicationContext.start();
         HelloService helloService = (HelloService) applicationContext.getBean("helloService");
         System.out.println(helloService.hello("mikeaaa"));
-        // System.in.read();
+        System.in.read();
     }
 }
