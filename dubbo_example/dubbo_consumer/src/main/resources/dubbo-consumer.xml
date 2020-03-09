@@ -6,13 +6,12 @@
         http://code.alibabatech.com/schema/dubbo
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd ">
 
-
     <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
     <dubbo:application name="dubbo_consumer" />
     <!-- 使用multicast广播注册中心暴露发现服务地址 -->
     <dubbo:registry  protocol="zookeeper" address="zookeeper://47.93.10.179:2181" />
     <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
-    <dubbo:reference id="helloService" interface="top.okay3r.service.HelloService" check="false"/>
+    <dubbo:reference id="helloService" interface="top.okay3r.service.HelloService" check="false" />
 
     <dubbo:consumer timeout="5000"/>
 
